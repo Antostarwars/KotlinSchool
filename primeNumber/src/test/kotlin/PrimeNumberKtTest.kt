@@ -12,7 +12,7 @@ class PrimeNumberKtTest {
     @Test
     fun isNotPrime() {
         val expected = false
-        Assertions.assertEquals(expected, primeNumber(18))
+        Assertions.assertEquals(expected, primeNumber(8))
     }
 
     @Test

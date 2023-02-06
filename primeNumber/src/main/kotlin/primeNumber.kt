@@ -1,14 +1,14 @@
 fun primeNumber(number: Int): Boolean {
-    require(number > 0) {
+    require(number > 1) {
         "Number must be positive"
     }
 
-    for (i in 0 until number) {
+    for (i in 2 until number) {
 
         if (number % i == 0) {
-            return true
+            return false
         }
 
     }
-    return false
+    return true
 }
