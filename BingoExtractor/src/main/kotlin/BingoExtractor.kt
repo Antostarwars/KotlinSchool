@@ -2,7 +2,6 @@ class BingoExtractor {
 
     private val numbers = Array<Boolean>(90) {true}
 
-
     fun isEmpty(): Boolean {
         var empty = false
         for (i in numbers.indices) {

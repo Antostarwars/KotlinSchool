@@ -1,8 +1,9 @@
 fun main() {
-    val bingo = BingoExtractor()
+    var ciao = "ciao"
 
-    println(bingo.isEmpty())
+    ciao.test()
+}
 
-    bingo.extractNumber()
-
+fun String.test() {
+    print("Testing")
 }
