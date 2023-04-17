@@ -1,27 +1,23 @@
-class Stack(private val length: Int, private val stackArray: Array<Int>) {
-    var stack = stackArray
+class Stack(private val length: Int) {
+    var stack = Array(length){0}
         private set
+    private var stackPointer = 0
 
     init {
-        require(length >= 0) {"Stack Length is lesser than 0"}
-        require(stack.size <= length) {"Stack is greater than the length!"}
+        require(length >= 0) {"Stack Length is lesser than 0!"}
     }
-
-    private var stackPointer = 0
 
     fun isEmpty() = stackPointer == 0
 
-    private fun isFull() = stackPointer <= length
-
     fun push(value: Int) {
-        check(isFull()) {"Stack is full"}
-        stackPointer += 1
+        check(stackPointer < length) {"StackOverflow (StackPointer: $stackPointer, Length: $length)!"}
         stack[stackPointer] = value
+        stackPointer++
     }
 
-    fun pop() {
-        check(isEmpty()) {"Stack is empty"}
-        stackPointer += 1
-        stack = stack.copyOfRange(0, stackPointer-1)
+    fun pop(): Int {
+        check(stackPointer > 0) {"Stack cannot be Empty!"}
+        stackPointer--
+        return stack[stackPointer]
     }
 }
