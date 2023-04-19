@@ -28,7 +28,7 @@ internal class StackTest {
     @Test
     fun cannotPushMoreElementsThanTheSize(){
         val stack = Stack(10)
-        for(i in 0..10){
+        for(i in 0..10) {
             if(i == 10){
                 assertThrows<IllegalStateException> { stack.push(i) }
             }
