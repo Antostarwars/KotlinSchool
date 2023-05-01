@@ -13,8 +13,8 @@ class StringClass(private val stringValue: Array<Char>) {
     }
 
     fun trim(): Array<Char> {
-        var positionFirst = 0
-        var positionSecond = 0
+        var positionFirst = -1
+        var lastPosition = -1
 
         for(i in string.indices){
             if(string[i] != ' '){
@@ -24,13 +24,17 @@ class StringClass(private val stringValue: Array<Char>) {
         }
         for(i in string.size-1 downTo 0){
             if(string[i] != ' '){
-                positionSecond = i
+                lastPosition = i
                 break
             }
         }
 
-        val array = Array<Char>(positionSecond - positionFirst + 1){' '}
-        for(i in positionFirst..positionSecond){
+        if(positionFirst == -1 && lastPosition == -1){
+            return Array(0){' '}
+        }
+
+        val array = Array<Char>(lastPosition - positionFirst + 1){' '}
+        for(i in positionFirst..lastPosition){
             array[i-positionFirst] = string[i]
         }
         return array
@@ -50,6 +54,7 @@ class StringClass(private val stringValue: Array<Char>) {
 
             result += digit * multiplier
             multiplier *= 10
+
         }
         return result
     }
