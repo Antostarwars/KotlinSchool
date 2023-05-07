@@ -1,6 +1,5 @@
-class StringClass(private val stringValue: Array<Char>) {
+class StringClass(private val string: Array<Char>) {
 
-    val string = stringValue
 
     fun equalsTo(otherString: String): Boolean {
         if (string.size != otherString.length) return false
