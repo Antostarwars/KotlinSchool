@@ -1,19 +1,37 @@
 class StringVerifica(private val string: Array<Char>) {
 
-    fun equalsTo(otherString: String): Boolean {
-        if (string.size != otherString.length) return false
+    fun equalsTo(otherString: StringVerifica): Boolean {
+        if (string.size != otherString.string.size) return false
 
         for (i in string.indices) {
-            if (string[i] != otherString[i]) return false
+            if (string[i] != otherString.string[i]) {
+                return false
+            }
         }
 
         return true
     }
 
     fun toCharArray(): Array<Char> {
-        return string
+       val newArray = Array<Char>(string.size) {' '}
+        for (i in string.indices) {
+            newArray[i] = string[i]
+        }
+        return newArray
     }
 
+    fun replaceChar(charToReplace: Char, charReplaced: Char): StringVerifica {
+        val newArray = Array<Char>(string.size) {' '}
+        for (i in string.indices) {
+          if (string[i] == charToReplace) {
+              newArray[i] = charReplaced
+          } else {
+              newArray[i] = string[i]
+          }
+        }
+
+        return StringVerifica(newArray)
+    }
     fun countVowels(): Int {
         var vowelsNumber = 0
         val vowels = "aeiou".toCharArray()

@@ -1,13 +1,11 @@
 class StringClass(private val string: Array<Char>) {
 
-
     fun equalsTo(otherString: String): Boolean {
         if (string.size != otherString.length) return false
 
         for (i in string.indices) {
             if (string[i] != otherString[i]) return false
         }
-
         return true
     }
 
