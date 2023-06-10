@@ -15,7 +15,10 @@ This is a Repository to store my own school Projects, coded in Kotlin!
 
 # Tech Used
 ![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
-      
+
+# Similar Repository
+
+- Repository of [@AlBovo](https://github.com/AlBovo)
 
 </> with 💛 by Antostarwars
     
